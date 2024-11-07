@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bkg">
+    android:background="@drawable/background">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:gravity="center">
 
             <SearchView
+                android:id="@+id/searchViewCity"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
