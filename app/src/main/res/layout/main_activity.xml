@@ -1,24 +1,425 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bkg">
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="213dp">
-
+        android:layout_height="51dp">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:gravity="center">
 
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
             <TextView
                 android:id="@+id/textViewCityName"
-                android:layout_width="140dp"
+                android:layout_width="163dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="center" />
+                android:text="Москва"
+                android:textSize="27sp" />
         </TableRow>
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        tools:src="@tools:sample/avatars" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textViewWeatherDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="3dp"
+            android:text="Небольшой снег"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textViewTemperatureCels"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="-1°C"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textViewTemperatureSplit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="/"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textViewTemperatureFahr"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="-15°F"
+            android:textSize="20sp"/>
+    </TableRow>
+
+    <TableLayout
+        android:layout_width="235dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@color/teal_700">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textViewPercTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:text="Ощущается:"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textViewPercTemperatureCels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="-3°C"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textViewPercTemperatureSplit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="/"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textPercTemperatureFahr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="-15°F"
+                android:textSize="16sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/textViewHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="Влажность:"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textViewHumidityValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:textSize="16sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textViewWindSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Скорость ветра:"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textViewWindSpeedValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18.0 км/ч"
+                android:textSize="16sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textViewWindDirection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Направление ветра:"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textViewDirectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Запад"
+                android:textSize="16sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textViewPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Давление:"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textViewPressureValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="761 mmHg"
+                android:textSize="16sp"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:background="@color/purple_200">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textViewSunriseValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="07:46"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textViewSunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Восход"
+                android:textSize="16sp"
+                android:layout_gravity="right"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textViewSunsetValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="18:46"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textViewSunset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Закат"
+                android:textSize="16sp"
+                android:layout_gravity="right"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:shrinkColumns="0">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/textView7DaysWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Прогноз на 7 дней"
+            android:textSize="16sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textView1DayAfter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ср"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textView1DayAfterWeatherDescrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Туман"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textView1DMinTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5°"
+                android:textSize="16sp"
+                android:layout_weight="12"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/textView1DMinMaxTemperatureSplit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="/"
+                android:textSize="20sp"
+                android:layout_weight="0.2"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/textView1DMaxTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10°"
+                android:textSize="16sp"
+                android:layout_weight="0.1"
+                android:gravity="end"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textView2DayAfter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Чт"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textView2DayAfterWeatherDescrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Небольшой дождь"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textView2DMinTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7°"
+                android:textSize="16sp"
+                android:layout_weight="12"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/textView2DMinMaxTemperatureSplit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="/"
+                android:textSize="20sp"
+                android:layout_weight="0.2"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/textView2DMaxTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9°"
+                android:textSize="16sp"
+                android:layout_weight="0.1"
+                android:gravity="end"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textView3DayAfter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Пт"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textView3DayAfterWeatherDescrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Небольшой дождь"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textView3DMinTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4°"
+                android:textSize="16sp"
+                android:layout_weight="12"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/textView3DMinMaxTemperatureSplit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="/"
+                android:textSize="20sp"
+                android:layout_weight="0.2"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/textView3DMaxTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9°"
+                android:textSize="16sp"
+                android:layout_weight="0.1"
+                android:gravity="end"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Прогноз на 7 дней" />
+
 </LinearLayout>
